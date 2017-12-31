@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-sm-9">
-    <div *ngIf="!hidenewVideo">
+    <div *ngIf="!hideNewVideo">
       <h2>New Video</h2>
       <form #form="ngForm" (ngSubmit)="onSubmitAddVideo(form.value)" class="well">
         <div class="form-group">
@@ -19,8 +19,7 @@
       </form>
     </div>
 
-    <app-video-detail (updateVideoEvent)="onUpdateVideoEvent($event)"
-                      *ngIf="selectedVideo && hidenewVideo" [video]="selectedVideo">
+    <app-video-detail *ngIf="selectedVideo && hideNewVideo" [video]="selectedVideo">
     </app-video-detail>
   </div>
   <div class="col-sm-3">
