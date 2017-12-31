@@ -19,7 +19,9 @@
       </form>
     </div>
 
-    <app-video-detail *ngIf="selectedVideo && hideNewVideo" [video]="selectedVideo">
+    <app-video-detail (updateVideoEvent)="onUpdateVideoEvent($event)"
+                      *ngIf="selectedVideo && hideNewVideo"
+                      [video]="selectedVideo">
     </app-video-detail>
   </div>
   <div class="col-sm-3">
